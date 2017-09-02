@@ -32,7 +32,7 @@ public class ContactDaoImpl implements ContactDao {
     public void save(Contact contact)
     {
       Session session = sessionFactory.openSession();
-      session.getTransaction();
+      session.beginTransaction();
       session.save(contact);
       session.getTransaction().commit();
       session.close();
